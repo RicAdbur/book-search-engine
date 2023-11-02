@@ -15,13 +15,13 @@ const resolvers = {
   Mutation: {
     login: async (parent, { email, password }, context, index) => {
       const user = await User.findOne({ email })
-      console.log(user)
+      // console.log(user)
       if (!user) {
         throw new GraphQLError("No user detected")
       }
 
       const verifiedPW = await user.isCorrectPassword(password)
-      console.log(verifiedPW)
+      // console.log(verifiedPW)
       if (!verifiedPW) {
         throw new GraphQLError("Password not verified")
       }
