@@ -55,7 +55,7 @@ const resolvers = {
         );
         return updatedUser;
       }
-      throw new AuthenticationError("Login required");
+      throw new GraphQLError("Login required");
     },
   },
 }
